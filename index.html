@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10251f">
+<title>Pocket Defense</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">✦</span><div><strong>POCKET DEFENSE</strong><small>tiny towers · big trouble</small></div></div>
+  <div class="stats">
+    <div><small>CASH</small><strong id="cash">$650</strong></div>
+    <div><small>HEARTS</small><strong id="lives">100</strong></div>
+    <div><small>ROUND</small><strong id="round">0 / 40</strong></div>
+  </div>
+  <button id="soundBtn" class="icon-btn" title="Toggle sound">♪ Sound: On</button>
+</header>
+
+<main class="layout">
+  <section class="game-panel">
+    <div class="canvas-wrap">
+      <canvas id="game" width="960" height="600" aria-label="Tower defense game board"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="modal">
+          <div class="eyebrow">A LITTLE STRATEGY GAME</div>
+          <h1 id="overlayTitle">Ready, defender?</h1>
+          <p id="overlayText">Build a defense, pop the blobs, and protect the garden gate for 40 rounds.</p>
+          <button id="playBtn" class="primary">Start defending <span>→</span></button>
+          <button id="continueBtn" class="secondary hidden">Continue saved game</button>
+        </div>
+      </div>
+    </div>
+    <div class="game-controls">
+      <div class="control-group">
+        <button id="startWave" class="primary" disabled>▶ Start round 1</button>
+        <button id="pauseBtn" class="secondary">Ⅱ Pause</button>
+        <button id="speedBtn" class="secondary">1× Speed</button>
+      </div>
+      <div class="hint" id="hint">Choose a tower, then click an open patch of grass.</div>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <section class="side-card">
+      <div class="section-head"><div><span class="eyebrow">YOUR DEFENSE</span><h2>Build a tower</h2></div><span class="tiny-icon">⌖</span></div>
+      <div class="tower-list" id="towerList"></div>
+    </section>
+    <section class="side-card upgrade-card">
+      <div class="section-head"><div><span class="eyebrow">FIELD REPORT</span><h2 id="detailTitle">No tower selected</h2></div></div>
+      <p id="detailText" class="muted">Pick a tower from the build menu or tap one on the map to inspect it.</p>
+      <div id="towerStats" class="tower-stats hidden"></div>
+      <div id="upgradeList"></div>
+      <button id="sellBtn" class="sell-btn hidden">Sell tower</button>
+    </section>
+    <section class="side-card mini-card">
+      <div class="section-head"><div><span class="eyebrow">FIELD NOTES</span><h2>How to play</h2></div></div>
+      <ul class="tips">
+        <li><span>01</span> Choose a tower and place it off the path.</li>
+        <li><span>02</span> Start each round to send blobs down the trail.</li>
+        <li><span>03</span> Earn cash by popping blobs. Upgrade or add towers.</li>
+        <li><span>04</span> If too many reach the gate, you lose hearts.</li>
+      </ul>
+      <div class="save-row"><span>● Auto-save enabled</span><button id="saveBtn">Save now</button></div>
+    </section>
+  </aside>
+</main>
+<footer><span>POCKET DEFENSE</span><span>Made for the browser · Progress saves on this device</span><button id="resetBtn">Reset progress</button></footer>
+<script src="game.js"></script>
+</body>
+</html>
